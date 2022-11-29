@@ -29,7 +29,10 @@ const contactsSlice = createSlice({
     [addContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-
+      if (state.items.some(contact => contact.name === action.payload.name)) {
+        alert(`contact ${action.payload.name} already in contacts`);
+        return;
+      }
       state.items = [...state.items, action.payload];
     },
     [deleteContact.pending]: handlePending,
