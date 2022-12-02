@@ -1,11 +1,11 @@
 import css from '../ContactList/ContactList.module.css';
 import { useSelector } from 'react-redux';
-import { getContacts, getError, getIsLoading } from 'Redux/selectors';
-import { getStatusFilter } from 'Redux/selectors';
+import { getContacts, getError, getIsLoading } from 'Redux/contacts/selectors';
+import { getStatusFilter } from 'Redux/contacts/selectors';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'Redux/operations';
-import { fetchContacts } from 'Redux/operations';
+import { deleteContact } from 'Redux/contacts/operations';
+import { fetchContacts } from 'Redux/contacts/operations';
 
 const ContactList = () => {
   const contacts = useSelector(getContacts);

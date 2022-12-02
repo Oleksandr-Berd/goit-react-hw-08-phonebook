@@ -1,17 +1,15 @@
 import React from 'react';
-import Form from './Form/Form';
-import ContactList from './ContactList/ContactList';
-import Filter from './Filter/Filter';
 import css from './App.module.css';
+import { AppBar } from './AppBar/AppBar';
+import Phonebook from 'pages/Phonebook';
+import Home from 'pages/Home';
 
 export default function App() {
   return (
     <div className={css.container}>
-      <h1 className={css.titlePhonebook}>Phonebook</h1>
-      <Form />
-      <Filter />
-      <h2 className={css.contactList}>Contacts</h2>
-      <ContactList />
+      <AppBar />
+      <Home />
+      <Phonebook />
     </div>
   );
 }
