@@ -33,6 +33,7 @@ const contactsSlice = createSlice({
         alert(`contact ${action.payload.name} already in contacts`);
         return;
       }
+
       state.items = [...state.items, action.payload];
     },
     [deleteContact.pending]: handlePending,

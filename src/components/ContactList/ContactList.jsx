@@ -9,11 +9,15 @@ import { fetchContacts } from 'Redux/contacts/operations';
 
 const ContactList = () => {
   const contacts = useSelector(getContacts);
+
   const filters = useSelector(getStatusFilter);
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
+
   const contactsArray = contacts.items;
+
   const getVisibleContacts = () => {
+    // console.log(isLoading);
     if (filters !== '') {
       return contactsArray.filter(contact =>
         contact.name.toLowerCase().includes(filters.toLowerCase())
@@ -28,6 +32,7 @@ const ContactList = () => {
     dispatch(deleteContact(evt));
   };
   const visibleContacts = getVisibleContacts(contactsArray, filters);
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
