@@ -8,6 +8,9 @@ export const RegisterForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
+    if (form.elements.password.value.length < 8) {
+      alert('Your password should consist at least of 8 symbols');
+    }
     dispatch(
       register({
         name: form.elements.name.value,

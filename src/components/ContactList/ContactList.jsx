@@ -40,10 +40,10 @@ const ContactList = () => {
   return (
     <ul className={css.contactList}>
       {isLoading && !error && <p>Request in progress...</p>}
-      {visibleContacts.map(({ name, phone, id }) => (
+      {visibleContacts.map(({ name, number, id }) => (
         <li className={css.contacts__item} key={id}>
           <p className={css.contacts__name}>{name}</p>
-          <p className={css.contacts__number}>{phone}</p>
+          <p className={css.contacts__number}>{number}</p>
           <button
             type="button"
             className={css.delete__btn}
